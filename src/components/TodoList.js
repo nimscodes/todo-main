@@ -68,8 +68,8 @@ const TodoList = ({ todos, onDeleteTodo, onToggleComplete, onClearCompleted, cou
       
     );
   return (
-    <div className="flex flex-col text-gray-500">
-      <div className=' bg-gray-100 dark:bg-gray-800 rounded overflow-hidden shadow-2xl'>
+    <div className="flex flex-col text-gray-300 dark:text-gray-600">
+      <div className=' bg-gray-100 dark:bg-gray-800 rounded overflow-hidden shadow-2xl my-5'>
         <div className="flex flex-col">{renderedTodos}</div>
         <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-800 shadow-2xl">
           <span>
@@ -84,7 +84,7 @@ const TodoList = ({ todos, onDeleteTodo, onToggleComplete, onClearCompleted, cou
         </div>
       </div>
 
-      <div className="md:hidden my-4 flex items-center justify-center space-x-4 p-3 text-lg bg-gray-100 dark:bg-gray-700 shadow-2xl rounded">
+      <div className="md:hidden flex items-center justify-center space-x-4 p-3 text-lg bg-gray-100 dark:bg-gray-800 shadow-2xl rounded">
         {renderedOptions}
       </div>
     </div>

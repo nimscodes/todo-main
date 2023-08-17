@@ -12,14 +12,13 @@ import { DragDropContext } from 'react-beautiful-dnd';
 
 const App = () => {
   const data = [
-    {id: 1, text: "Complete online javascript",  completed: true},
-    {id: 2, text: "Jog around the park 3x", completed: false},
-    {id: 3, text: "10 minutes meditiation",  completed: false},
-    {id: 4, text: "Read for 1 hour",  completed: false},
-    {id: 5, text: "Pick up groceries",  completed: false},
-    {id: 6, text: "Complete Todo App on Frontend Mentor", completed: false},
-
-  ]
+    { id: 1, text: 'Complete online javascript', completed: true },
+    { id: 2, text: 'Jog around the park 3x', completed: false },
+    { id: 3, text: '10 minutes meditiation', completed: false },
+    { id: 4, text: 'Read for 1 hour', completed: false },
+    { id: 5, text: 'Pick up groceries', completed: false },
+    { id: 6, text: 'Complete Todo App on Frontend Mentor', completed: false },
+  ];
   const [todos, setTodos] = useState(data);
   const [remainingTodoCount, setRemainingTodoCount] = useState(0);
   const [colorTheme, setTheme] = useDarkSide();
@@ -35,7 +34,6 @@ const App = () => {
   const icon = colorTheme === 'light' ? sun : moon;
 
   const isSmallScreen = window.innerWidth <= 500;
-
 
   let backgroundImage;
 
@@ -69,10 +67,10 @@ const App = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
   };
 
-  const clearCompleted  = () => {
-    const updatedTodos = todos.filter(todo => !todo.completed);
-    setTodos(updatedTodos)
-  }
+  const clearCompleted = () => {
+    const updatedTodos = todos.filter((todo) => !todo.completed);
+    setTodos(updatedTodos);
+  };
 
   const toggleComplete = (todoId) => {
     const updatedTodos = todos.map((todo) => {
@@ -86,7 +84,6 @@ const App = () => {
     });
 
     setTodos(updatedTodos);
-
   };
 
   useEffect(() => {
@@ -100,9 +97,9 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
-    const newTodos = todos.filter(todo => !todo.completed);
+    const newTodos = todos.filter((todo) => !todo.completed);
     const count = newTodos.length;
-    
+
     setRemainingTodoCount(count);
   }, [todos]);
 
@@ -117,9 +114,9 @@ const App = () => {
 
   return (
     <div className="h-screen bg-gray-300 dark:bg-gray-900 transition duration-200 font-josefin text-sm md:text-md">
-      <div className="w-full flex flex-col items-center" style={containerStyle}>
+      <div className="flex flex-col items-center" style={containerStyle}>
         <div className="w-full md:w-1/2">
-          <div className="mt-10 px-4">
+          <div className="my-10 px-4">
             <div className="flex items-center justify-between py-3 my-5">
               <h1 className="text-white text-3xl font-semibold tracking-widest">
                 TODO
@@ -146,10 +143,9 @@ const App = () => {
                 count={remainingTodoCount}
               />
             </DragDropContext>
-
-            <div className="flex justify-center items-center text-gray-500 mt-10">
-              <span>Drag and drop to reorder list</span>
-            </div>
+          </div>
+          <div className="flex justify-center items-center text-gray-500">
+            <span>Drag and drop to reorder list</span>
           </div>
         </div>
       </div>

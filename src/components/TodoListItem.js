@@ -37,7 +37,7 @@ const TodoListItem = ({ todo, onDeleteTodo, onToggleComplete }) => {
         />
         {checkbox}
       </label>
-      <span className={`bg-transparent flex-1 text-gray-600 dark:text-gray-200 font-josefin ${todo.completed && 'line-through opacity-50'} `}>{todo.text}</span>
+      <span className={`bg-transparent flex-1 text-gray-600 dark:text-gray-400 font-josefin ${todo.completed && 'line-through opacity-50'} `}>{todo.text}</span>
       {hoveredTodo === todo.id &&  (<img src={cross} onClick={() => onDeleteTodo(todo.id)} className='w-4 h-4' alt="delete" />)}
     </div>
   )

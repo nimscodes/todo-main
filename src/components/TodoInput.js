@@ -19,13 +19,13 @@ const TodoInput = ({ onAddTodo }) => {
     addTodo();
   }
   return (
-    <form onSubmit={handleSubmit} className="flex items-center space-x-4  bg-gray-100 dark:bg-gray-800 p-4 rounded mb-4">
+    <form onSubmit={handleSubmit} className="flex items-center space-x-4  bg-gray-100 dark:bg-gray-800 p-4 rounded">
       <span className="border border-gray-300 dark:border-gray-600 rounded-full w-4 h-4 bg-transparent"></span>
       <input
         type="text"
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
-        className="bg-transparent flex-1 font-josefin outline-none dark:text-gray-200 text-gray-700"
+        className="bg-transparent flex-1 font-josefin outline-none dark:text-gray-400 text-gray-600"
         placeholder="Create a new todo..."
       />
     </form>
