@@ -2,7 +2,7 @@
 
 ## Overview
 
-A simple todo application built with React and Tailwind CSS that allows users to manage their tasks efficiently.
+An interactive todo application built with React and Tailwind CSS that allows users to manage their tasks efficiently.
 
 ## Features
 
@@ -15,7 +15,7 @@ A simple todo application built with React and Tailwind CSS that allows users to
 - **Clear Completed**: Quickly clear all completed tasks from the list.
 - **Light and Dark Mode**: Toggle between light and dark mode to suit your visual preferences.
 - **Drag and Drop**: Reorder items on the list by dragging and dropping them in the desired order.
-- **Data Persistence**: This Todo App utilizes the browser's "**localStorage**" to persist todo items, ensuring that your tasks are saved even if you close the application or refresh the page.
+- **Data Persistence**: This app utilizes the browser's "**localStorage**" to persist todo items, ensuring that your tasks are saved even if you close the application or refresh the page.
 
 ### Screenshot
 
