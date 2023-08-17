@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Todo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+A simple todo application built with React and Tailwind CSS that allows users to manage their tasks efficiently.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Responsive Design**: The app is optimized for various screen sizes, providing an optimal layout for both desktop and mobile devices.
+- **Interactive Elements**: Interactive elements on the page have hover states for better user experience.
+- **Add New Todo**s: Easily add new tasks to your list with the user-friendly input field.
+- **Mark Todos as Complete**: Keep track of completed tasks by marking them as complete.
+- **Delete Todos**: Remove tasks from the list when they're no longer needed.
+- **Filter Options**: Choose to view all todos, active todos, or completed todos based on your preference.
+- **Clear Completed**: Quickly clear all completed tasks from the list.
+- **Light and Dark Mode**: Toggle between light and dark mode to suit your visual preferences.
+- **Drag and Drop**: Reorder items on the list by dragging and dropping them in the desired order.
+- **Data Persistence**: This Todo App utilizes the browser's "**localStorage**" to persist todo items, ensuring that your tasks are saved even if you close the application or refresh the page.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Screenshot
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![desktop](./src/images/desktop-dark.png)
+![mobile](./src/images/mob-dark.png)
 
-### `npm test`
+### Link
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Todo App](https://nimscodes.github.io/todo-main/)
 
-### `npm run build`
+##  Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Add new todos by typing your task and hitting Enter or clicking the "Add" button.
+- Mark todos as complete by clicking the checkbox next to each task.
+- Delete todos by clicking the delete icon when hovering over a task.
+- Use the filter buttons to view all, active, or completed todos.
+- Clear all completed todos using the "Clear Completed" button.
+- Toggle between light and dark mode using the mode switcher.
