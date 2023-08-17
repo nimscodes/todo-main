@@ -19,15 +19,15 @@ const TodoListItem = ({ todo, onDeleteTodo, onToggleComplete }) => {
   }
 
   const checkbox = todo.completed ? (
-    <span className="flex items-center justify-center border-gray-500 rounded-full w-5 h-5 gradient-background">
+    <span className="flex items-center justify-center rounded-full w-4 h-4 gradient-background">
       <img src={check} alt='check'/>
     </span>
   ) : (
-    <span className="border-2 border-gray-500 rounded-full w-5 h-5 bg-transparent"></span>
+    <span className="border border-gray-300 dark:border-gray-600 rounded-full w-4 h-4 bg-transparent"></span>
   )
 
   return (
-    <div onMouseEnter={() => handleMouseEnter(todo.id)} onMouseLeave={handleMouseLeave} className="flex items-center space-x-4 border-b border-gray-400  p-3 md:p-3 cursor-pointer">
+    <div onMouseEnter={() => handleMouseEnter(todo.id)} onMouseLeave={handleMouseLeave} className="flex items-center space-x-4 border-b border-gray-300 dark:border-gray-600 p-4 cursor-pointer">
       <label className="inline-flex items-center cursor-pointer">
         <input
           type="checkbox"
@@ -37,7 +37,7 @@ const TodoListItem = ({ todo, onDeleteTodo, onToggleComplete }) => {
         />
         {checkbox}
       </label>
-      <span className={`bg-transparent py-1 flex-1 text-gray-600 dark:text-gray-200 font-josefin ${todo.completed && 'line-through'} `}>{todo.text}</span>
+      <span className={`bg-transparent flex-1 text-gray-600 dark:text-gray-200 font-josefin ${todo.completed && 'line-through opacity-50'} `}>{todo.text}</span>
       {hoveredTodo === todo.id &&  (<img src={cross} onClick={() => onDeleteTodo(todo.id)} className='w-4 h-4' alt="delete" />)}
     </div>
   )

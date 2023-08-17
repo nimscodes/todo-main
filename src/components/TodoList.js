@@ -2,7 +2,7 @@ import TodoListItem from './TodoListItem';
 import { useState } from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
-const TodoList = ({ todos, onDeleteTodo, onToggleComplete, onClearCompleted }) => {
+const TodoList = ({ todos, onDeleteTodo, onToggleComplete, onClearCompleted, count }) => {
   const [selected, setSelected] = useState('all');
 
   const options = [
@@ -15,14 +15,12 @@ const TodoList = ({ todos, onDeleteTodo, onToggleComplete, onClearCompleted }) =
     setSelected(option);
   };
 
-  console.log(selected);
-
   const renderedOptions = options.map((option) => {
     return (
       <span
         onClick={() => handleSelect(option.value)}
         key={option.value}
-        className={`hover:text-blue-500 dark:hover:text-white cursor-pointer ${
+        className={`hover:text-gray-900 dark:hover:text-white cursor-pointer ${
           selected === option.value && 'text-blue-500'
         }`}
       >
@@ -71,22 +69,22 @@ const TodoList = ({ todos, onDeleteTodo, onToggleComplete, onClearCompleted }) =
     );
   return (
     <div className="flex flex-col text-gray-500">
-      <div className=' bg-gray-100 dark:bg-gray-700 rounded overflow-hidden shadow-2xl'>
+      <div className=' bg-gray-100 dark:bg-gray-800 rounded overflow-hidden shadow-2xl'>
         <div className="flex flex-col">{renderedTodos}</div>
-        <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-700 shadow-2xl">
-          <span className=" hover:text-white cursor-pointer ">
-            {todos.length} items left
+        <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-800 shadow-2xl">
+          <span>
+            {count} items left
           </span>
-          <div className="hidden md:flex items-center justify-center space-x-2">
+          <div className="hidden md:flex items-center justify-center space-x-3">
             {renderedOptions}
           </div>
-          <span onClick={onClearCompleted} className=" hover:text-white cursor-pointer">
+          <span onClick={onClearCompleted} className="hover:text-gray-900 dark:hover:text-white cursor-pointer">
             Clear Completed
           </span>
         </div>
       </div>
 
-      <div className="md:hidden my-4 flex items-center justify-center space-x-2 p-3 text-lg bg-gray-100 dark:bg-gray-700 shadow-2xl rounded">
+      <div className="md:hidden my-4 flex items-center justify-center space-x-4 p-3 text-lg bg-gray-100 dark:bg-gray-700 shadow-2xl rounded">
         {renderedOptions}
       </div>
     </div>

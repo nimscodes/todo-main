@@ -21,6 +21,7 @@ const App = () => {
 
   ]
   const [todos, setTodos] = useState(data);
+  const [remainingTodoCount, setRemainingTodoCount] = useState(0);
   const [colorTheme, setTheme] = useDarkSide();
   const [darkMode, setDarkMode] = useState(
     colorTheme === 'light' ? true : false
@@ -83,7 +84,9 @@ const App = () => {
       }
       return todo;
     });
+
     setTodos(updatedTodos);
+
   };
 
   useEffect(() => {
@@ -97,6 +100,10 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
+    const newTodos = todos.filter(todo => !todo.completed);
+    const count = newTodos.length;
+    
+    setRemainingTodoCount(count);
   }, [todos]);
 
   const onDragEnd = (result) => {
@@ -109,7 +116,7 @@ const App = () => {
   };
 
   return (
-    <div className="h-screen bg-gray-200 dark:bg-gray-800 transition duration-200 font-josefin text-sm md:text-md">
+    <div className="h-screen bg-gray-300 dark:bg-gray-900 transition duration-200 font-josefin text-sm md:text-md">
       <div className="w-full flex flex-col items-center" style={containerStyle}>
         <div className="w-full md:w-1/2">
           <div className="mt-10 px-4">
@@ -117,7 +124,7 @@ const App = () => {
               <h1 className="text-white text-3xl font-semibold tracking-widest">
                 TODO
               </h1>
-              <div className="transition-opacity duration-500">
+              <div className="transition-opacity duration-200">
                 <img
                   checked={darkMode}
                   onClick={toggleDarkMode}
@@ -136,6 +143,7 @@ const App = () => {
                 onDeleteTodo={onDeleteTodo}
                 onToggleComplete={toggleComplete}
                 onClearCompleted={clearCompleted}
+                count={remainingTodoCount}
               />
             </DragDropContext>
 
