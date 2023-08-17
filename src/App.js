@@ -11,7 +11,16 @@ import TodoList from './components/TodoList';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
+  const data = [
+    {id: 1, text: "Complete online javascript",  completed: true},
+    {id: 2, text: "Jog around the park 3x", completed: false},
+    {id: 3, text: "10 minutes meditiation",  completed: false},
+    {id: 4, text: "Read for 1 hour",  completed: false},
+    {id: 5, text: "Pick up groceries",  completed: false},
+    {id: 6, text: "Complete Todo App on Frontend Mentor", completed: false},
+
+  ]
+  const [todos, setTodos] = useState(data);
   const [colorTheme, setTheme] = useDarkSide();
   const [darkMode, setDarkMode] = useState(
     colorTheme === 'light' ? true : false
@@ -25,8 +34,7 @@ const App = () => {
   const icon = colorTheme === 'light' ? sun : moon;
 
   const isSmallScreen = window.innerWidth <= 500;
-  // const screenHeight = window.innerHeight;
-  // const backgroundHeight = `${Math.round(screenHeight * 0.2)}px`;
+
 
   let backgroundImage;
 
@@ -80,7 +88,11 @@ const App = () => {
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem('todos'));
-    setTodos(storedTodos);
+    if (storedTodos) {
+      setTodos(storedTodos);
+    } else {
+      localStorage.setItem('todos', JSON.stringify(data));
+    }
   }, []);
 
   useEffect(() => {
